@@ -105,22 +105,27 @@ The cleaned data was aggregated by user type (`member_casual`) and day of the we
 Technical Note: For statistical processing, trip durations were calculated as decimal minutes (e.g., `25.71` minutes) to secure highly accurate averages before formatting.
 Note: Data cleaning and processing were performed using French software interfaces.
 
-Core Trends and Analytical Discoveries
-A. Trip Volume: Routine vs. Leisure
+**Core Trends and Analytical Discoveries**
+**A. Trip Volume: Routine vs. Leisure**
+
 ![Consolidation des données](4.png)
 Note: Data cleaning and processing were performed using French software interfaces.
 
 Analyzing total trip counts reveals completely opposing weekly habits:
-Members: Maintain a massive, highly stable trip volume from Monday through Friday, peaking on Tuesdays and Wednesdays (~390K trips). This indicates a highly utilitarian pattern tied to daily work commutes.
-Casuals: Experience an exponential surge over the weekend. Saturday stands out as their most active day (272,366 trips), reflecting an 86% increase compared to their baseline weekday volumes.
-B. Trip Duration: The Major Structural Gap
+- **Members**: Maintain a massive, highly stable trip volume from Monday through Friday, peaking on Tuesdays and Wednesdays (~390K trips). This indicates a highly utilitarian pattern tied to daily work commutes.
+- **Casuals**: Experience an exponential surge over the weekend. Saturday stands out as their most active day (**272,366 trips**), reflecting an 86% increase compared to their baseline weekday volumes.
+- 
+**B. Trip Duration: The Major Structural Gap**
+
 ![Consolidation des données](5.png)
 Note: Data cleaning and processing were performed using French software interfaces.
 
 This is the most critical revelation within the historical data:
-Casual riders consistently stay out on bikes significantly longer than members. On Sundays, a casual rider cruises for an average of 25.71 minutes, which is nearly double the time spent by an annual member (13.91 minutes).
-This duration gap persists throughout the entire workweek as well, demonstrating that casual riders view the service as a tool for exploration, tourism, or recreation rather than point-to-point transit efficiency.
-Analysis Summary Table
+- Casual riders consistently stay out on bikes significantly longer than members. On Sundays, a casual rider cruises for an average of **25.71** minutes, which is nearly double the time spent by an annual member (**13.91 minutes**).
+- This duration gap persists throughout the entire workweek as well, demonstrating that casual riders view the service as a tool for exploration, tourism, or recreation rather than point-to-point transit efficiency.
+
+**Analysis Summary Table** 
+
 Metric
 Casual Riders
 Annual Members
@@ -134,40 +139,46 @@ Primary Use-Case Profile
 Leisure, tourism, and recreation
 Daily commuting and utility
 
-Strategic Value for Lily Moreno
-Financial Leverage: Because casual riders rely on long-duration trips, using the financial savings of an annual membership compared to cumulative pay-per-minute or daily pass pricing acts as a compelling conversion trigger.
-Marketing Framing: Conversion campaigns should heavily peak on weekends and summer months when casual volume spikes. The copy should emphasize freedom, unlimited recreational riding, and peace of mind—eliminating the anxiety of "watching the clock tick" during long weekend outings.
+**Strategic Value for Lily Moreno**
+- **Financial Leverage**: Because casual riders rely on long-duration trips, using the financial savings of an annual membership compared to cumulative pay-per-minute or daily pass pricing acts as a compelling conversion trigger.
+- **Marketing Framing**: Conversion campaigns should heavily peak on weekends and summer months when casual volume spikes. The copy should emphasize freedom, unlimited recreational riding, and peace of mind—eliminating the anxiety of "watching the clock tick" during long weekend outings.
 
 
 **Phase 5: Share**
 
-I engineered a polished, interactive dashboard on Tableau Public to communicate these insights effectively to the executive team. To ensure high accessibility and data storytelling clarity, a strict visual color code was implemented: Blue for Casual Riders and Orange for Annual Members.
-Formatting Note: In the final executive charts below, decimal minutes are converted to standard time notation (Minutes:Seconds) to deliver immediate readability for corporate stakeholders.
-1. Daily Ride Volume
+I engineered a polished, interactive dashboard on Tableau Public to communicate these insights effectively to the executive team. To ensure high accessibility and data storytelling clarity, a strict visual color code was implemented: **Blue for Casual Riders** and **Orange for Annual Members**.
+
+**1. Daily Ride Volume**
    
 ![Consolidation des données](6.png)
 
 Annual members display uniform utilization across weekdays, with a subtle mid-week hump, reinforcing their identity as primary commuter users. Conversely, casual riders exhibit very low relative weekday volume but experience a massive surge on weekends, climbing up to nearly match member volumes on Saturdays.
 
-3. Average Trip Duration by Day
+**2. Average Trip Duration by Day**
+
+Formatting Note: In the final executive charts below, decimal minutes are converted to standard time notation (Minutes:Seconds) to deliver immediate readability for corporate stakeholders.
+
 ![Consolidation des données](7.png)
 
-Casual riders log substantially longer trips than members across the board. On Sundays, this contrast peaks: casual riders spend an average of 25:43 on vélos, compared to just 13:55 for members. This multi-minute gap remains highly pronounced even on standard weekdays (e.g., 18:18 for casuals vs. 11:59 for members on Wednesdays), definitively marking an exploratory behavior pattern.
+Casual riders log substantially longer trips than members across the board. On Sundays, this contrast peaks: casual riders spend an average of **25:43** on vélos, compared to just **13:55** for members. This multi-minute gap remains highly pronounced even on standard weekdays (e.g., **18:18** for casuals vs. **11:59** for members on Wednesdays), definitively marking an exploratory behavior pattern.
 
-Phase Summary
+**Summary**
 The visual storytelling mathematically validates that casual riders are high-value consumers who regularly pay premium rates for extended trip times. Transitioning them to an annual tier represents an incredible upside for recurring company revenue.
 
 
 **Phase 6: Act**
 
 Armed with clear data-backed trends, the Cyclistic executive team can confidently transition from baseline analysis to localized, revenue-driving business strategies.
-Data-Driven Strategic Recommendations (Top 3)
-Launch a "Weekend Warrior" Annual Membership Tier: Since casual user volume peaks aggressively on Saturdays and Sundays (with maximum average durations of 25:09 and 25:43), creating an exclusive, lower-cost weekend annual pass can smoothly capture recreational users who do not require a standard 5-day commuting subscription.
-Execute Duration-Based Savings Campaigns: Because casual riders clock trips that are more than twice as long as members, marketing materials should showcase the annual membership as a financial tool that unlocks “unlimited long-duration rides without ticking clock fees.” Visualizing the cumulative pay-per-minute cost of their current weekend habits against a flat annual membership fee will cleanly emphasize their personal savings.
-Deploy "Ready for the Weekend" Digital Campaigns: Run localized, geo-targeted mobile and social media advertisements on Friday afternoons and Saturday mornings. Placing these ads directly around high-traffic bike docking stations will nudge casual riders into upgrading to an annual tier immediately before unlocking a bike for their weekend leisure plans.
-Proposed Next Steps
-Secondary Location-Based Spatial Analysis: Conduct an advanced spatial analysis mapping coordinate data to pinpoint the exact geographic station hotspots where casual riders unlock bikes on weekends (e.g., parks, coastal paths, tourist attractions). This data will allow the marketing team to optimize physical ad placement and concentrate bike inventory where conversion opportunities are highest.
-Technical Toolkit Demonstrated
-SQL (SQLite/BigQuery): Consolidated massive multi-million-row databases (>5M records), utilized complex data cleaning commands (`CAST, UNION ALL, DELETE WHERE IS NULL`, conditional bounds handling), and conducted database health checks.
-Tableau Public: Developed clear executive visualizations, structured multi-axis temporal charts, implemented strict color-coded data storytelling, and refined labeling aesthetics.
-Google Sheets: Executed initial data validation, structural syntax analysis, and source file integrity checks.
+
+**Data-Driven Strategic Recommendations**
+- **Launch a "Weekend Warrior" Annual Membership Tier**: Since casual user volume peaks aggressively on Saturdays and Sundays (with maximum average durations of 25:09 and 25:43), creating an exclusive, lower-cost weekend annual pass can smoothly capture recreational users who do not require a standard 5-day commuting subscription.
+- **Execute Duration-Based Savings Campaigns**: Because casual riders clock trips that are more than twice as long as members, marketing materials should showcase the annual membership as a financial tool that unlocks “unlimited long-duration rides without ticking clock fees.” Visualizing the cumulative pay-per-minute cost of their current weekend habits against a flat annual membership fee will cleanly emphasize their personal savings.
+- **Deploy "Ready for the Weekend" Digital Campaigns**: Run localized, geo-targeted mobile and social media advertisements on Friday afternoons and Saturday mornings. Placing these ads directly around high-traffic bike docking stations will nudge casual riders into upgrading to an annual tier immediately before unlocking a bike for their weekend leisure plans.
+  
+**Proposed Next Steps**
+- **Secondary Location-Based Spatial Analysis**: Conduct an advanced spatial analysis mapping coordinate data to pinpoint the exact geographic station hotspots where casual riders unlock bikes on weekends (e.g., parks, coastal paths, tourist attractions). This data will allow the marketing team to optimize physical ad placement and concentrate bike inventory where conversion opportunities are highest.
+  
+**Technical Toolkit Demonstrated**
+- **SQL (SQLite/BigQuery)**: Consolidated massive multi-million-row databases (>5M records), utilized complex data cleaning commands (`CAST, UNION ALL, DELETE WHERE IS NULL`, conditional bounds handling), and conducted database health checks.
+- **Tableau Public**: Developed clear executive visualizations, structured multi-axis temporal charts, implemented strict color-coded data storytelling, and refined labeling aesthetics.
+- **Google Sheets**: Executed initial data validation, structural syntax analysis, and source file integrity checks.
