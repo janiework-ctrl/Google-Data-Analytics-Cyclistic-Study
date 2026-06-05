@@ -2,3 +2,8 @@ theme: jekyll-theme-cayman
 github:
   is_project_page: false
 show_downloads: false
+title: "Google Data Analytics : Cyclistic Case Study"
+theme: jekyll-theme-cayman
+github:
+  is_project_page: false
+show_downloads: false
