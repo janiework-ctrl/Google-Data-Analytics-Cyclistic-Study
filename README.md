@@ -15,9 +15,9 @@ The company aims to maximize the number of annual memberships because they are s
 
 By identifying these distinct trends, the marketing team will design targeted strategies to convert casual riders into annual members. The final findings and professional data visualizations will be presented to Lily Moreno and the executive team to secure approval for the recommended marketing program.
 
-**Business Objective**: Design marketing strategies aimed at converting casual riders into annual members.
+- **Business Objective**: Design marketing strategies aimed at converting casual riders into annual members.
 
-**Core Question**: How do annual members and casual riders use Cyclistic bikes differently?
+- **Core Question**: How do annual members and casual riders use Cyclistic bikes differently?
 
 
 **Phase 2: Prepare**
@@ -33,16 +33,16 @@ The analysis utilizes Cyclistic’s historical trip data covering a 12-month per
 - ✅ **Cited** → Clearly identified source with explicit public licensing and data-use privacy agreements.
 
 **Data Structure**
-12 files in .csv format, named using the standard corporate nomenclature: Cyclistic_TripData_YYYYMM.
-13 columns (Unique trip ID, user type, start/end timestamps, station IDs, station names, and geographical coordinates).
-A mix of quantitative data (trip counts, durations) and qualitative data (user categories, station names).
+- 12 files in .csv format, named using the standard corporate nomenclature: `Cyclistic_TripData_YYYYMM`.
+- 13 columns (Unique trip ID, user type, start/end timestamps, station IDs, station names, and geographical coordinates).
+- A mix of quantitative data (trip counts, durations) and qualitative data (user categories, station names).
 
 **Security and Data Privacy**
-Riders’ personally identifiable information (PII) is strictly prohibited due to data-privacy issues.
-Original source files are backed up separately in a read-only environment to ensure data preservation.
+- Riders’ personally identifiable information (PII) is strictly prohibited due to data-privacy issues.
+- Original source files are backed up separately in a read-only environment to ensure data preservation.
 
 **Identified Data Limitations**
-Because of data anonymization, it is impossible to connect pass purchases back to credit card numbers. Therefore, we cannot determine if casual riders live within the service area or if they purchase multiple single-ride passes.
+- Because of data anonymization, it is impossible to connect pass purchases back to credit card numbers. Therefore, we cannot determine if casual riders live within the service area or if they purchase multiple single-ride passes.
 
 
 **Phase 3: Process**
@@ -50,11 +50,11 @@ Because of data anonymization, it is impossible to connect pass purchases back t
 To prepare the data for thorough analysis, I executed a rigorous data-cleaning process structured within SQL to guarantee accuracy, consistency, and data integrity.
 
 **Technical Environment Selection**
-The cumulative volume of data to process across the 12-month period exceeds 5 million rows. Traditional spreadsheet software like Excel or Google Sheets cannot handle datasets of this magnitude effectively due to row limitations. Consequently, I chose to perform all data wrangling and processing using SQL via DB Browser for SQLite.
+The cumulative volume of data to process across the 12-month period exceeds **5 million rows**. Traditional spreadsheet software like Excel or Google Sheets cannot handle datasets of this magnitude effectively due to row limitations. Consequently, I chose to perform all data wrangling and processing using **SQL via DB Browser for SQLite**.
 
 **Initial Integrity Control**
 Before importing the raw data, a comprehensive chronological sweep was performed:
-Anomaly Correction: A naming inconsistency was identified in the January 2026 folder, which contained a file accidentally labeled "January 2025". After inspecting the internal file metadata, the data was confirmed to belong to 2026. The folder was renamed properly to prevent chronological skewing.
+- **Anomaly Correction**: A naming inconsistency was identified in the January 2026 folder, which contained a file accidentally labeled "January 2025". After inspecting the internal file metadata, the data was confirmed to belong to 2026. The folder was renamed properly to prevent chronological skewing.
 
 **Data Consolidation and Harmonization (Merging)**
 The 12 monthly CSV files were merged into a single comprehensive master table named all_trips_combined.
