@@ -126,18 +126,11 @@ This is the most critical revelation within the historical data:
 
 **Analysis Summary Table** 
 
-Metric
-Casual Riders
-Annual Members
-Peak Usage Period
-Weekends (Saturday / Sunday)
-Weekdays (Tuesday to Thursday)
-Max Average Duration
-~25 minutes
-~14 minutes
-Primary Use-Case Profile
-Leisure, tourism, and recreation
-Daily commuting and utility
+| Metric | Casual Riders | Annual Members |
+| :--- | :--- | :--- |
+| **Peak Usage Period** | Weekends (Saturday / Sunday) | Weekdays (Tuesday to Thursday) |
+| **Max Average Duration** | ~25 minutes | ~14 minutes |
+| **Primary Use-Case Profile** | Leisure, tourism, and recreation | Daily commuting and utility |
 
 **Strategic Value for Lily Moreno**
 - **Financial Leverage**: Because casual riders rely on long-duration trips, using the financial savings of an annual membership compared to cumulative pay-per-minute or daily pass pricing acts as a compelling conversion trigger.
