@@ -36,7 +36,7 @@ Anomaly Correction: A naming inconsistency was identified in the January 2026 fo
 The 12 monthly CSV files were merged into a single comprehensive master table named all_trips_combined.
 Data Harmonization via CAST: Because certain imported files exhibited automatic formatting discrepancies (such as generic field names like field1, field2, etc.), I applied the CAST function to enforce strict data types (e.g., forcing IDs to TEXT and geographical coordinates to REAL).
 Merging Query: The consolidation was executed seamlessly using the UNION ALL operator.
-(Ref: File 1_2.png)
+![Consolidation des données](1.png)
 Note: Data cleaning and processing were performed using French software interfaces.
 Merge Validation: A distinct count query on the month column post-merge confirmed the exact presence of all 12 active months, proving zero data loss occurred during consolidation.
 4. Data Transformation and Enrichment (trips_cleaned Creation)
@@ -44,14 +44,14 @@ To directly answer the business tasks, I calculated and extracted new time-based
 ride_length: Computed the exact trip duration in minutes by converting timestamps using strftime('%s').
 day_of_week: Extracted the specific day of the week (formatted as 0-6, where 0 represents Sunday).
 month: Extracted the numerical month attribute to facilitate seasonal analysis.
-(Ref: File 2_2.png)
+![Consolidation des données](2.png)
 Note: Data cleaning and processing were performed using French software interfaces.
 5. Final Cleaning of Outliers and Bias Removal
 To ensure the reliability of statistical averages, strict conditional filtering was implemented to eliminate technical anomalies and unrealistic trip lengths:
 Removal of Technical Trips and Misstarts: Automatically excluded all trips shorter than or equal to 1 minute (identified as system tests or accidental dock unlocks), as well as station names containing "test" or "maintenance".
 Handling Missing Data: Dropped 672,924 rows where the end_station_name field was null (IS NULL). Control Check: A comparative analysis before and after dropping these rows confirmed that the structural ratio between casual riders and annual members remained perfectly stable, proving this step did not introduce any user bias.
 Max Duration Filtering: Removed trips exceeding 24 hours (1,440 minutes), which represent unreturned bikes, system locking errors, or potential thefts (amounting to 127 trips: 83 casual riders and 44 members).
-(Ref: File 3_2.png)
+![Consolidation des données](3.png)
 Note: Data cleaning and processing were performed using French software interfaces.
 6. Data Quality Check (Validation Step)
 Prior to exporting the clean dataset into Tableau for visualization, I ran definitive auditing queries to certify the absolute accuracy of the trips_cleaned table:
@@ -67,14 +67,17 @@ The goal of this phase is to identify the overarching trends and relationships t
 Data Organization and Formatting
 The cleaned data was aggregated by user type (member_casual) and day of the week (day_of_week) to map behavioral patterns directly.
 Technical Note: For statistical processing, trip durations were calculated as decimal minutes (e.g., 25.71 minutes) to secure highly accurate averages before formatting.
-(Ref: File 4.png & File 5.png)
 Note: Data cleaning and processing were performed using French software interfaces.
 Core Trends and Analytical Discoveries
 A. Trip Volume: Routine vs. Leisure
+![Consolidation des données](4.png)
+Note: Data cleaning and processing were performed using French software interfaces.
 Analyzing total trip counts reveals completely opposing weekly habits:
 Members: Maintain a massive, highly stable trip volume from Monday through Friday, peaking on Tuesdays and Wednesdays (~390K trips). This indicates a highly utilitarian pattern tied to daily work commutes.
 Casuals: Experience an exponential surge over the weekend. Saturday stands out as their most active day (272,366 trips), reflecting an 86% increase compared to their baseline weekday volumes.
 B. Trip Duration: The Major Structural Gap
+![Consolidation des données](5.png)
+Note: Data cleaning and processing were performed using French software interfaces.
 This is the most critical revelation within the historical data:
 Casual riders consistently stay out on bikes significantly longer than members. On Sundays, a casual rider cruises for an average of 25.71 minutes, which is nearly double the time spent by an annual member (13.91 minutes).
 This duration gap persists throughout the entire workweek as well, demonstrating that casual riders view the service as a tool for exploration, tourism, or recreation rather than point-to-point transit efficiency.
@@ -99,10 +102,10 @@ Phase 5: Share
 I engineered a polished, interactive dashboard on Tableau Public to communicate these insights effectively to the executive team. To ensure high accessibility and data storytelling clarity, a strict visual color code was implemented: Blue for Casual Riders and Orange for Annual Members.
 Formatting Note: In the final executive charts below, decimal minutes are converted to standard time notation (Minutes:Seconds) to deliver immediate readability for corporate stakeholders.
 1. Daily Ride Volume
-(Ref: File 1000215634.jpg / Photo 6)
+![Consolidation des données](6.png)
 Annual members display uniform utilization across weekdays, with a subtle mid-week hump, reinforcing their identity as primary commuter users. Conversely, casual riders exhibit very low relative weekday volume but experience a massive surge on weekends, climbing up to nearly match member volumes on Saturdays.
 2. Average Trip Duration by Day
-(Ref: File 1000215633.jpg / Photo 7)
+![Consolidation des données](7.png)
 Casual riders log substantially longer trips than members across the board. On Sundays, this contrast peaks: casual riders spend an average of 25:43 on vélos, compared to just 13:55 for members. This multi-minute gap remains highly pronounced even on standard weekdays (e.g., 18:18 for casuals vs. 11:59 for members on Wednesdays), definitively marking an exploratory behavior pattern.
 Phase Summary
 The visual storytelling mathematically validates that casual riders are high-value consumers who regularly pay premium rates for extended trip times. Transitioning them to an annual tier represents an incredible upside for recurring company revenue.
