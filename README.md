@@ -57,19 +57,19 @@ Before importing the raw data, a comprehensive chronological sweep was performed
 - **Anomaly Correction**: A naming inconsistency was identified in the January 2026 folder, which contained a file accidentally labeled "January 2025". After inspecting the internal file metadata, the data was confirmed to belong to 2026. The folder was renamed properly to prevent chronological skewing.
 
 **Data Consolidation and Harmonization (Merging)**
-The 12 monthly CSV files were merged into a single comprehensive master table named all_trips_combined.
-Data Harmonization via CAST: Because certain imported files exhibited automatic formatting discrepancies (such as generic field names like field1, field2, etc.), I applied the CAST function to enforce strict data types (e.g., forcing IDs to TEXT and geographical coordinates to REAL).
-Merging Query: The consolidation was executed seamlessly using the UNION ALL operator.
+The 12 monthly CSV files were merged into a single comprehensive master table named `all_trips_combined`.
+Data Harmonization via `CAST`: Because certain imported files exhibited automatic formatting discrepancies (such as generic field names like field1, field2, etc.), I applied the CAST function to enforce strict data types (e.g., forcing IDs to `TEXT` and geographical coordinates to `REAL`).
+Merging Query: The consolidation was executed seamlessly using the `UNION ALL` operator.
 
 ![Consolidation des données](1.png)
 Note: Data cleaning and processing were performed using French software interfaces.
 Merge Validation: A distinct count query on the month column post-merge confirmed the exact presence of all 12 active months, proving zero data loss occurred during consolidation.
 
-**Data Transformation and Enrichment (trips_cleaned Creation)**
-To directly answer the business tasks, I calculated and extracted new time-based attributes while creating the final working table trips_cleaned:
-- **ride_length**: Computed the exact trip duration in minutes by converting timestamps using strftime('%s').
-- **day_of_week**: Extracted the specific day of the week (formatted as 0-6, where 0 represents Sunday).
-- **month**: Extracted the numerical month attribute to facilitate seasonal analysis.
+**Data Transformation and Enrichment (`trips_cleaned` Creation)**
+To directly answer the business tasks, I calculated and extracted new time-based attributes while creating the final working table `trips_cleaned`:
+- `ride_length`: Computed the exact trip duration in minutes by converting timestamps using `strftime('%s')`.
+- `day_of_week`: Extracted the specific day of the week (formatted as 0-6, where 0 represents Sunday).
+- `month`: Extracted the numerical month attribute to facilitate seasonal analysis.
   
 ![Consolidation des données](2.png)
 Note: Data cleaning and processing were performed using French software interfaces.
@@ -77,23 +77,23 @@ Note: Data cleaning and processing were performed using French software interfac
 **Final Cleaning of Outliers and Bias Removal**
 To ensure the reliability of statistical averages, strict conditional filtering was implemented to eliminate technical anomalies and unrealistic trip lengths:
 - **Removal of Technical Trips and Misstarts**: Automatically excluded all trips shorter than or equal to 1 minute (identified as system tests or accidental dock unlocks), as well as station names containing "test" or "maintenance".
-- **Handling Missing Data**: Dropped 672,924 rows where the end_station_name field was null (IS NULL). Control Check: A comparative analysis before and after dropping these rows confirmed that the structural ratio between casual riders and annual members remained perfectly stable, proving this step did not introduce any user bias.
+- **Handling Missing Data**: Dropped 672,924 rows where the `end_station_name` field was null (`IS NULL`). Control Check: A comparative analysis before and after dropping these rows confirmed that the structural ratio between casual riders and annual members remained perfectly stable, proving this step did not introduce any user bias.
 - **Max Duration Filtering**: Removed trips exceeding 24 hours (1,440 minutes), which represent unreturned bikes, system locking errors, or potential thefts (amounting to 127 trips: 83 casual riders and 44 members).
   
 ![Consolidation des données](3.png)
 Note: Data cleaning and processing were performed using French software interfaces.
 
 **Data Quality Check (Validation Step)**
-Prior to exporting the clean dataset into Tableau for visualization, I ran definitive auditing queries to certify the absolute accuracy of the trips_cleaned table:
-- **Logical Time Validation**: The query SELECT COUNT(*) WHERE ride_length < 0 returned a value of 0, confirming no inverted timestamps existed.
-- **Categorical Integrity**: The query SELECT DISTINCT member_casual confirmed that exactly two clean strings existed ("member" and "casual"), checking off any accidental typos or trailing whitespaces.
-- **Uniqueness Audit**: Confirmed zero duplicated ride_id values (result equal to 0).
+Prior to exporting the clean dataset into Tableau for visualization, I ran definitive auditing queries to certify the absolute accuracy of the `trips_cleaned` table:
+- **Logical Time Validation**: The query `SELECT COUNT(*) WHERE ride_length < 0 returned a value of 0`, confirming no inverted timestamps existed.
+- **Categorical Integrity**: The query `SELECT DISTINCT member_casual` confirmed that exactly two clean strings existed ("member" and "casual"), checking off any accidental typos or trailing whitespaces.
+- **Uniqueness Audit**: Confirmed zero duplicated `ride_id` values (result equal to 0).
 - **Final Data Volume**: The cleaned master database contains exactly 3,747,160 clean trips. This massive volume provides an incredibly robust statistical sample size for the analysis phase.
 
 **Process Reproducibility**
 Every step of data manipulation (UNION, CAST, CREATE, DELETE) was fully documented and archived as SQL script files. This practice ensures perfect reproducibility for external audits or future data updates.
 
-Phase Deliverable: The final trips_cleaned table is centralized, standardized, and ready for key metric aggregation (Ref: File 4.png), generating the required summary output table (Ref: File 5.png) for our visualizations.
+Phase Deliverable: The final `trips_cleaned` table is centralized, standardized, and ready for key metric aggregation (Ref: File 4.png), generating the required summary output table (Ref: File 5.png) for our visualizations.
 
 
 **Phase 4: Analyze**
@@ -101,8 +101,8 @@ Phase Deliverable: The final trips_cleaned table is centralized, standardized, a
 The goal of this phase is to identify the overarching trends and relationships that differentiate how casual riders and annual members navigate the bike-share system.
 Data Organization and Formatting
 
-The cleaned data was aggregated by user type (member_casual) and day of the week (day_of_week) to map behavioral patterns directly.
-Technical Note: For statistical processing, trip durations were calculated as decimal minutes (e.g., 25.71 minutes) to secure highly accurate averages before formatting.
+The cleaned data was aggregated by user type (`member_casual`) and day of the week (`day_of_week`) to map behavioral patterns directly.
+Technical Note: For statistical processing, trip durations were calculated as decimal minutes (e.g., `25.71` minutes) to secure highly accurate averages before formatting.
 Note: Data cleaning and processing were performed using French software interfaces.
 
 Core Trends and Analytical Discoveries
@@ -168,6 +168,6 @@ Deploy "Ready for the Weekend" Digital Campaigns: Run localized, geo-targeted mo
 Proposed Next Steps
 Secondary Location-Based Spatial Analysis: Conduct an advanced spatial analysis mapping coordinate data to pinpoint the exact geographic station hotspots where casual riders unlock bikes on weekends (e.g., parks, coastal paths, tourist attractions). This data will allow the marketing team to optimize physical ad placement and concentrate bike inventory where conversion opportunities are highest.
 Technical Toolkit Demonstrated
-SQL (SQLite/BigQuery): Consolidated massive multi-million-row databases (>5M records), utilized complex data cleaning commands (CAST, UNION ALL, DELETE WHERE IS NULL, conditional bounds handling), and conducted database health checks.
+SQL (SQLite/BigQuery): Consolidated massive multi-million-row databases (>5M records), utilized complex data cleaning commands (`CAST, UNION ALL, DELETE WHERE IS NULL`, conditional bounds handling), and conducted database health checks.
 Tableau Public: Developed clear executive visualizations, structured multi-axis temporal charts, implemented strict color-coded data storytelling, and refined labeling aesthetics.
 Google Sheets: Executed initial data validation, structural syntax analysis, and source file integrity checks.
