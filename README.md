@@ -108,7 +108,8 @@ Technical Note: For statistical processing, trip durations were calculated as de
 Note: Data cleaning and processing were performed using French software interfaces.
 
 **Core Trends and Analytical Discoveries**
-**A. Trip Volume: Routine vs. Leisure**
+
+**Trip Volume: Routine vs. Leisure**
 
 ![Consolidation des données](4.png)
 
@@ -117,8 +118,8 @@ Note: Data cleaning and processing were performed using French software interfac
 Analyzing total trip counts reveals completely opposing weekly habits:
 - **Members**: Maintain a massive, highly stable trip volume from Monday through Friday, peaking on Tuesdays and Wednesdays (~390K trips). This indicates a highly utilitarian pattern tied to daily work commutes.
 - **Casuals**: Experience an exponential surge over the weekend. Saturday stands out as their most active day (**272,366 trips**), reflecting an 86% increase compared to their baseline weekday volumes.
-- 
-**B. Trip Duration: The Major Structural Gap**
+  
+**Trip Duration: The Major Structural Gap**
 
 ![Consolidation des données](5.png)
 
