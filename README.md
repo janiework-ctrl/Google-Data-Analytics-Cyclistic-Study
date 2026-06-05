@@ -25,11 +25,11 @@ Data Source Identification
 The analysis utilizes Cyclistic’s historical trip data covering a 12-month period (May 2025 – April 2026). The data consists of 12 compressed CSV files publicly available and downloaded from the [official corporate server](https://divvy-tripdata.s3.amazonaws.com/index.html).The data has been made available by Motivate International Inc. under a specific public license.
 
 Data Credibility Evaluation (ROCCC Quality Framework)
-Reliable: ✅ Official data directly captured by the actual operator of the Chicago bike-share system.
-Original: ✅ First-party data collected directly by Motivate International Inc. without any third-party modification.
-Comprehensive: ✅ Contains a full 12-month period, structured across 13 uniform metadata columns, ranging between 49k and 531k rows per monthly file.
-Current: ✅ Up-to-date historical data reflecting recent user habits from May 2025 to April 2026.
-Cited: ✅ Clearly identified source with explicit public licensing and data-use privacy agreements.
+- ✅ **Reliable** → Official source and actual operator of the service in Chicago.
+- ✅ **Original** → First-party data collected directly by Motivate International Inc., with no third-party modification.
+- ✅ **Comprehensive** → Full 12-month period, structured across 13 uniform columns, ranging between 49k and 531k rows per file.
+- ✅ **Current** → Fresh historical data covering recent user habits from May 2025 to April 2026.
+- ✅ **Cited** → Clearly identified source with explicit public licensing and data-use privacy agreements.
 
 Data Structure
 12 files in .csv format, named using the standard corporate nomenclature: Cyclistic_TripData_YYYYMM.
@@ -96,19 +96,23 @@ Phase 4: Analyze
 
 The goal of this phase is to identify the overarching trends and relationships that differentiate how casual riders and annual members navigate the bike-share system.
 Data Organization and Formatting
+
 The cleaned data was aggregated by user type (member_casual) and day of the week (day_of_week) to map behavioral patterns directly.
 Technical Note: For statistical processing, trip durations were calculated as decimal minutes (e.g., 25.71 minutes) to secure highly accurate averages before formatting.
 Note: Data cleaning and processing were performed using French software interfaces.
+
 Core Trends and Analytical Discoveries
 A. Trip Volume: Routine vs. Leisure
 ![Consolidation des données](4.png)
 Note: Data cleaning and processing were performed using French software interfaces.
+
 Analyzing total trip counts reveals completely opposing weekly habits:
 Members: Maintain a massive, highly stable trip volume from Monday through Friday, peaking on Tuesdays and Wednesdays (~390K trips). This indicates a highly utilitarian pattern tied to daily work commutes.
 Casuals: Experience an exponential surge over the weekend. Saturday stands out as their most active day (272,366 trips), reflecting an 86% increase compared to their baseline weekday volumes.
 B. Trip Duration: The Major Structural Gap
 ![Consolidation des données](5.png)
 Note: Data cleaning and processing were performed using French software interfaces.
+
 This is the most critical revelation within the historical data:
 Casual riders consistently stay out on bikes significantly longer than members. On Sundays, a casual rider cruises for an average of 25.71 minutes, which is nearly double the time spent by an annual member (13.91 minutes).
 This duration gap persists throughout the entire workweek as well, demonstrating that casual riders view the service as a tool for exploration, tourism, or recreation rather than point-to-point transit efficiency.
