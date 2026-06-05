@@ -22,8 +22,7 @@ Core Question: How do annual members and casual riders use Cyclistic bikes diffe
 Phase 2: Prepare
 
 Data Source Identification
-The analysis utilizes Cyclistic’s historical trip data covering a 12-month period (May 2025 – April 2026). The data consists of 12 compressed CSV files publicly available and downloaded from the [official corporate server](https://divvy-tripdata.s3.amazonaws.com/index.html).
-The data has been made available by Motivate International Inc. under a specific public license.
+The analysis utilizes Cyclistic’s historical trip data covering a 12-month period (May 2025 – April 2026). The data consists of 12 compressed CSV files publicly available and downloaded from the [official corporate server](https://divvy-tripdata.s3.amazonaws.com/index.html).The data has been made available by Motivate International Inc. under a specific public license.
 
 Data Credibility Evaluation (ROCCC Quality Framework)
 Reliable: ✅ Official data directly captured by the actual operator of the Chicago bike-share system.
