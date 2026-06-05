@@ -120,6 +120,7 @@ Analyzing total trip counts reveals completely opposing weekly habits:
 **B. Trip Duration: The Major Structural Gap**
 
 ![Consolidation des données](5.png)
+
 Note: Data cleaning and processing were performed using French software interfaces.
 
 This is the most critical revelation within the historical data:
