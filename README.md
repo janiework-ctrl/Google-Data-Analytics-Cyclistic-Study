@@ -141,13 +141,13 @@ This is the most critical revelation within the historical data:
 
 I engineered a polished, interactive dashboard on Tableau Public to communicate these insights effectively to the executive team. To ensure high accessibility and data storytelling clarity, a strict visual color code was implemented: **Blue for Casual Riders** and **Orange for Annual Members**.
 
-**1. Daily Ride Volume**
+**Daily Ride Volume**
    
 ![Consolidation des données](6.png)
 
 Annual members display uniform utilization across weekdays, with a subtle mid-week hump, reinforcing their identity as primary commuter users. Conversely, casual riders exhibit very low relative weekday volume but experience a massive surge on weekends, climbing up to nearly match member volumes on Saturdays.
 
-**2. Average Trip Duration by Day**
+**Average Trip Duration by Day**
 
 Formatting Note: In the final executive charts below, decimal minutes are converted to standard time notation (Minutes:Seconds) to deliver immediate readability for corporate stakeholders.
 
