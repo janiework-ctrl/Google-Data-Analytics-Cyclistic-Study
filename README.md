@@ -4,6 +4,7 @@ Case Study: How Does a Bike-Share Navigate Speedy Success? (Cyclistic)
 Introduction
 
 In this case study, I am acting as a junior data analyst working on the marketing analyst team at Cyclistic, a bike-share company in Chicago.
+
 Cyclistic operates a fleet of more than 5,800 bicycles tracked and locked into a network of 600 docking stations. The company has two types of clients: casual riders and annual members, with the latter identified by financial analysts as much more profitable. The director of marketing, Lily Moreno, aims to maximize the number of annual members by converting existing casual riders rather than targeting entirely new customers. To achieve this goal, this analysis follows the six steps of the Google data analysis process: Ask, Prepare, Process, Analyze, Share, and Act.
 
 
@@ -12,14 +13,17 @@ Phase 1: Ask
 The company aims to maximize the number of annual memberships because they are significantly more profitable than casual riders. The business task is to analyze historical bike trip data to understand how annual members and casual riders use Cyclistic bikes differently.
 
 By identifying these distinct trends, the marketing team will design targeted strategies to convert casual riders into annual members. The final findings and professional data visualizations will be presented to Lily Moreno and the executive team to secure approval for the recommended marketing program.
+
 Business Objective: Design marketing strategies aimed at converting casual riders into annual members.
+
 Core Question: How do annual members and casual riders use Cyclistic bikes differently?
 
 
 Phase 2: Prepare
 
 Data Source Identification
-The analysis utilizes Cyclistic’s historical trip data covering a 12-month period (May 2025 – April 2026). The data consists of 12 compressed CSV files publicly available and downloaded from the official corporate server: Index of bucket divvy-tripdata. The data has been made available by Motivate International Inc. under a specific public license.
+The analysis utilizes Cyclistic’s historical trip data covering a 12-month period (May 2025 – April 2026). The data consists of 12 compressed CSV files publicly available and downloaded from the official corporate server: [official corporate server](https://divvy-tripdata.s3.amazonaws.com/index.html)[cite: 1].
+The data has been made available by Motivate International Inc. under a specific public license.
 
 Data Credibility Evaluation (ROCCC Quality Framework)
 Reliable: ✅ Official data directly captured by the actual operator of the Chicago bike-share system.
