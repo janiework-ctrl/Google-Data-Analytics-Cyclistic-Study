@@ -1,15 +1,15 @@
-**Case Study: How Does a Bike-Share Navigate Speedy Success? (Cyclistic)**
+# **Case Study: How Does a Bike-Share Navigate Speedy Success? (Cyclistic)**
 
 
 
-**Introduction**
+## **Introduction**
 
 In this case study, I am acting as a junior data analyst working on the marketing analyst team at Cyclistic, a bike-share company in Chicago.
 
 Cyclistic operates a fleet of more than 5,800 bicycles tracked and locked into a network of 600 docking stations. The company has two types of clients: casual riders and annual members, with the latter identified by financial analysts as much more profitable. The director of marketing, Lily Moreno, aims to maximize the number of annual members by converting existing casual riders rather than targeting entirely new customers. To achieve this goal, this analysis follows the six steps of the Google data analysis process: **Ask, Prepare, Process, Analyze, Share**, and **Act**.
 
 
-**Phase 1: Ask**
+## **Phase 1: Ask**
 
 The company aims to maximize the number of annual memberships because they are significantly more profitable than casual riders. The business task is to analyze historical bike trip data to understand how annual members and casual riders use Cyclistic bikes differently.
 
@@ -20,7 +20,7 @@ By identifying these distinct trends, the marketing team will design targeted st
 - **Core Question**: How do annual members and casual riders use Cyclistic bikes differently?
 
 
-**Phase 2: Prepare**
+## **Phase 2: Prepare**
 
 **Data Source Identification**
 The analysis utilizes Cyclistic’s historical trip data covering a 12-month period (May 2025 – April 2026). The data consists of 12 compressed CSV files publicly available and downloaded from the [official corporate server](https://divvy-tripdata.s3.amazonaws.com/index.html).The data has been made available by Motivate International Inc. under a specific public license.
@@ -45,7 +45,7 @@ The analysis utilizes Cyclistic’s historical trip data covering a 12-month per
 - Because of data anonymization, it is impossible to connect pass purchases back to credit card numbers. Therefore, we cannot determine if casual riders live within the service area or if they purchase multiple single-ride passes.
 
 
-**Phase 3: Process**
+## **Phase 3: Process**
 
 To prepare the data for thorough analysis, I executed a rigorous data-cleaning process structured within SQL to guarantee accuracy, consistency, and data integrity.
 
@@ -96,7 +96,7 @@ Every step of data manipulation (UNION, CAST, CREATE, DELETE) was fully document
 Phase Deliverable: The final `trips_cleaned` table is centralized, standardized, and ready for key metric aggregation (Ref: File 4.png), generating the required summary output table (Ref: File 5.png) for our visualizations.
 
 
-**Phase 4: Analyze**
+## **Phase 4: Analyze**
 
 The goal of this phase is to identify the overarching trends and relationships that differentiate how casual riders and annual members navigate the bike-share system.
 Data Organization and Formatting
@@ -137,7 +137,7 @@ This is the most critical revelation within the historical data:
 - **Marketing Framing**: Conversion campaigns should heavily peak on weekends and summer months when casual volume spikes. The copy should emphasize freedom, unlimited recreational riding, and peace of mind—eliminating the anxiety of "watching the clock tick" during long weekend outings.
 
 
-**Phase 5: Share**
+## **Phase 5: Share**
 
 I engineered a polished, interactive dashboard on Tableau Public to communicate these insights effectively to the executive team. To ensure high accessibility and data storytelling clarity, a strict visual color code was implemented: **Blue for Casual Riders** and **Orange for Annual Members**.
 
@@ -159,7 +159,7 @@ Casual riders log substantially longer trips than members across the board. On S
 The visual storytelling mathematically validates that casual riders are high-value consumers who regularly pay premium rates for extended trip times. Transitioning them to an annual tier represents an incredible upside for recurring company revenue.
 
 
-**Phase 6: Act**
+## **Phase 6: Act**
 
 Armed with clear data-backed trends, the Cyclistic executive team can confidently transition from baseline analysis to localized, revenue-driving business strategies.
 
