@@ -179,6 +179,6 @@ Armed with clear data-backed trends, the Cyclistic executive team can confidentl
 - **Secondary Location-Based Spatial Analysis**: Conduct an advanced spatial analysis mapping coordinate data to pinpoint the exact geographic station hotspots where casual riders unlock bikes on weekends (e.g., parks, coastal paths, tourist attractions). This data will allow the marketing team to optimize physical ad placement and concentrate bike inventory where conversion opportunities are highest.
   
 **Technical Toolkit Demonstrated**
-- **SQL (SQLite/BigQuery)**: Consolidated massive multi-million-row databases (>5M records), utilized complex data cleaning commands (`CAST, UNION ALL, DELETE WHERE IS NULL`, conditional bounds handling), and conducted database health checks.
+- **SQL (SQLite)**: Consolidated massive multi-million-row databases (>5M records), utilized complex data cleaning commands (`CAST, UNION ALL, DELETE WHERE IS NULL`, conditional bounds handling), and conducted database health checks.
 - **Tableau Public**: Developed clear executive visualizations, structured multi-axis temporal charts, implemented strict color-coded data storytelling, and refined labeling aesthetics.
 - **Google Sheets**: Executed initial data validation, structural syntax analysis, and source file integrity checks.
