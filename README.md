@@ -60,11 +60,10 @@ Before importing the raw data, a comprehensive chronological sweep was performed
 The 12 monthly CSV files were merged into a single comprehensive master table named `all_trips_combined`.
 - **Data Harmonization via `CAST`**: Because certain imported files exhibited automatic formatting discrepancies (such as generic field names like field1, field2, etc.), I applied the CAST function to enforce strict data types (e.g., forcing IDs to `TEXT` and geographical coordinates to `REAL`).
 - **Merging Query**: The consolidation was executed seamlessly using the `UNION ALL` operator.
-
+- **Merge Validation**: A distinct count query on the month column post-merge confirmed the exact presence of all 12 active months, proving zero data loss occurred during consolidation.
+- 
 ![Consolidation des données](1.png)
 Note: Data cleaning and processing were performed using French software interfaces.
-
-- **Merge Validation**: A distinct count query on the month column post-merge confirmed the exact presence of all 12 active months, proving zero data loss occurred during consolidation.
 
 **Data Transformation and Enrichment (`trips_cleaned` Creation)**
 To directly answer the business tasks, I calculated and extracted new time-based attributes while creating the final working table `trips_cleaned`:
