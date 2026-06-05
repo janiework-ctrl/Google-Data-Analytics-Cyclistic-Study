@@ -94,7 +94,7 @@ Prior to exporting the clean dataset into Tableau for visualization, I ran defin
 **Process Reproducibility**
 Every step of data manipulation (UNION, CAST, CREATE, DELETE) was fully documented and archived as SQL script files. This practice ensures perfect reproducibility for external audits or future data updates.
 
-Phase Deliverable: The final `trips_cleaned` table is centralized, standardized, and ready for key metric aggregation (Ref: File 4.png), generating the required summary output table (Ref: File 5.png) for our visualizations.
+- **Deliverable**: The final `trips_cleaned` table is centralized, standardized, and ready for key metric aggregation (Ref: File 4.png), generating the required summary output table (Ref: File 5.png) for our visualizations.
 
 
 ## **Phase 4: Analyze**
