@@ -103,12 +103,14 @@ Data Organization and Formatting
 
 The cleaned data was aggregated by user type (`member_casual`) and day of the week (`day_of_week`) to map behavioral patterns directly.
 Technical Note: For statistical processing, trip durations were calculated as decimal minutes (e.g., `25.71` minutes) to secure highly accurate averages before formatting.
+
 Note: Data cleaning and processing were performed using French software interfaces.
 
 **Core Trends and Analytical Discoveries**
 **A. Trip Volume: Routine vs. Leisure**
 
 ![Consolidation des données](4.png)
+
 Note: Data cleaning and processing were performed using French software interfaces.
 
 Analyzing total trip counts reveals completely opposing weekly habits:
