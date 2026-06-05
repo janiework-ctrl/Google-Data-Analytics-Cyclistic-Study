@@ -1,6 +1,7 @@
 **Case Study: How Does a Bike-Share Navigate Speedy Success? (Cyclistic)**
 
 
+
 **Introduction**
 
 In this case study, I am acting as a junior data analyst working on the marketing analyst team at Cyclistic, a bike-share company in Chicago.
