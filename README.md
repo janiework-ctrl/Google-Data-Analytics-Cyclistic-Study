@@ -126,7 +126,7 @@ This is the most critical revelation within the historical data:
 
 **Analysis Summary Table** 
 
-| Metric | Casual Riders | Annual Members |
+|   | Casual Riders | Annual Members |
 | :--- | :--- | :--- |
 | **Peak Usage Period** | Weekends (Saturday / Sunday) | Weekdays (Tuesday to Thursday) |
 | **Max Average Duration** | ~25 minutes | ~14 minutes |
